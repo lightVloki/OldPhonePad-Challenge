@@ -1,0 +1,15 @@
+/Users/okeoma/IronSoftware coding challenge/bin/Debug/net7.0/IronSoftware coding challenge
+/Users/okeoma/IronSoftware coding challenge/bin/Debug/net7.0/IronSoftware coding challenge.deps.json
+/Users/okeoma/IronSoftware coding challenge/bin/Debug/net7.0/IronSoftware coding challenge.runtimeconfig.json
+/Users/okeoma/IronSoftware coding challenge/bin/Debug/net7.0/IronSoftware coding challenge.dll
+/Users/okeoma/IronSoftware coding challenge/bin/Debug/net7.0/IronSoftware coding challenge.pdb
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.csproj.AssemblyReference.cache
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.GeneratedMSBuildEditorConfig.editorconfig
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.AssemblyInfoInputs.cache
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.AssemblyInfo.cs
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.csproj.CoreCompileInputs.cache
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.dll
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/refint/IronSoftware coding challenge.dll
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.pdb
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/IronSoftware coding challenge.genruntimeconfig.cache
+/Users/okeoma/IronSoftware coding challenge/obj/Debug/net7.0/ref/IronSoftware coding challenge.dll

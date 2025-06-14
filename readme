@@ -1,0 +1,131 @@
+# OldPhonePad - T9 Text Input Simulator
+
+A C# implementation that simulates the classic T9 (Text on 9 keys) input method used on old mobile phone keypads.
+
+## Overview
+
+This project implements a method that converts numeric keypad sequences into text, simulating how text input worked on old mobile phones where each number key represented multiple letters.
+
+## How It Works
+
+### Keypad Layout
+```
+0: Space
+1: & ' (
+2: A B C
+3: D E F
+4: G H I
+5: J K L
+6: M N O
+7: P Q R S
+8: T U V
+9: W X Y Z
+*: Backspace
+#: Send (End of input)
+```
+
+### Input Rules
+1. **Multiple Presses**: Pressing a button multiple times cycles through its characters
+   - Press '2' once → 'A'
+   - Press '2' twice → 'B'
+   - Press '2' three times → 'C'
+   - Press '2' four times → 'A' (cycles back)
+
+2. **Same Button Pause**: To type two characters from the same button, you must include a space
+   - "222 2 22" → "CAB"
+   - Without spaces, "22222" would be 'B' (5 presses = 2nd character)
+
+3. **Backspace**: The asterisk (*) deletes the previous character
+
+4. **End Marker**: Input ends with '#' (which is not included in the output)
+
+## Implementation Details
+
+### Method Signature
+```csharp
+public static string OldPhonePad(string input)
+```
+
+### Algorithm
+1. Parse the input string character by character
+2. Count consecutive presses of the same button
+3. Map the press count to the corresponding character using modulo for cycling
+4. Handle special cases:
+   - Spaces (pause between same button presses)
+   - Asterisks (backspace functionality)
+   - Hash symbol (end marker)
+
+### Key Features
+- **Cycling Support**: Handles wraparound when button is pressed more than available characters
+- **Backspace Handling**: Properly removes characters with asterisk
+- **Robust Parsing**: Handles edge cases like empty input, multiple spaces, etc.
+- **Clean Code**: Well-documented with clear variable names and comments
+
+## Usage Examples
+
+```csharp
+// Basic examples
+OldPhonePad("33#")              // Returns: "E"
+OldPhonePad("227*#")            // Returns: "B" (types "BB" then deletes one)
+OldPhonePad("4433555 555666#")  // Returns: "HELLO"
+OldPhonePad("8 88777444666*664#") // Returns: "TURING"
+
+// Edge cases
+OldPhonePad("#")                // Returns: "" (empty)
+OldPhonePad("2222#")            // Returns: "A" (wraparound after 3)
+OldPhonePad("0#")               // Returns: " " (space)
+```
+
+## Project Structure
+
+```
+OldPhonePadChallenge/
+├── OldPhonePad.cs           # Main implementation
+├── OldPhonePadTests.cs      # Comprehensive unit tests
+├── README.md                # This file
+└── OldPhonePadChallenge.csproj  # Project file
+```
+
+## Testing
+
+The solution includes comprehensive unit tests covering:
+- All provided examples
+- Edge cases (empty input, wraparound, etc.)
+- Backspace functionality
+- Space handling
+- Special characters
+- Complex multi-character inputs
+
+### Running Tests
+```bash
+dotnet test
+```
+
+## Design Decisions
+
+1. **Static Method**: Implemented as a static method for simplicity and stateless operation
+2. **Dictionary Mapping**: Used Dictionary for O(1) button-to-characters lookup
+3. **StringBuilder**: Used for efficient string building in the result
+4. **Modulo Operation**: Elegant solution for character cycling
+5. **Clear Separation**: Logic is clearly separated for different input types
+
+## Performance
+
+- **Time Complexity**: O(n) where n is the length of the input string
+- **Space Complexity**: O(n) for the output string
+
+## Future Enhancements
+
+Potential improvements could include:
+- Support for additional special characters
+- Configurable keypad layouts
+- T9 predictive text functionality
+- Support for different language layouts
+
+## Author
+
+Created as a solution for the Iron Software C# Coding Challenge.
+
+## License
+
+This project is provided as-is for educational and demonstration purposes.
