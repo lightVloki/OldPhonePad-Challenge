@@ -4,24 +4,6 @@ using System.Text;
 
 namespace OldPhonePadChallenge
 {
-    /// <summary>
-    /// Simulates text input using a traditional phone keypad (T9-style).
-    /// 
-    /// Design Philosophy:
-    /// This implementation uses a state machine approach to process input sequences.
-    /// Each character in the input string represents either:
-    /// - A button press (0-9)
-    /// - A timing delimiter (space)
-    /// - A command (backspace '*' or send '#')
-    /// 
-    /// The algorithm processes input in a single pass (O(n) complexity) by:
-    /// 1. Grouping consecutive identical button presses
-    /// 2. Converting press counts to characters using modular arithmetic
-    /// 3. Handling special commands as they appear
-    /// 
-    /// Author: [Your Name]
-    /// Date: [Current Date]
-    /// </summary>
     public static class PhoneKeypadDecoder
     {
         #region Keypad Configuration
